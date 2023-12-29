@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  email       String   @db.VarChar(255)
+  password    String   @db.VarChar(255)
+  created_at  DateTime @default(now()) @db.Timestamp(0)
+  updated_at  DateTime @default(now()) @updatedAt @db.Timestamp(0)
+
+  @@map("users")
+}
+
+model Meal {
+  id          Int         @id @default(autoincrement())
+  type        Int         @db.TinyInt
+  name        String      @db.VarChar(255)
+  note        String?     @db.Text
+  created_at  DateTime    @default(now()) @db.Timestamp(0)
+  updated_at  DateTime    @default(now()) @updatedAt @db.Timestamp(0)
+  meal_tags   MealTag[]   @relation("meal_fk_1")
+  histories   History[] @relation("meal_fk_2")
+
+  @@map("meals")
+}
+
+model Tag {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique @db.VarChar(255)
+  created_at  DateTime  @default(now()) @db.Timestamp(0)
+  updated_at  DateTime  @default(now()) @updatedAt @db.Timestamp(0)
+  meal_tags   MealTag[] @relation("tag_fk_1")
+
+  @@map("tags")
+}
+
+model MealTag {
+  id          Int      @id @default(autoincrement())
+  meal_id     Int
+  meals       Meal     @relation(name: "meal_fk_1", fields: [meal_id], references: [id])
+  tag_id      Int
+  tags        Tag      @relation(name: "tag_fk_1", fields: [tag_id], references: [id])
+  created_at  DateTime @default(now()) @db.Timestamp(0)
+  updated_at  DateTime @default(now()) @updatedAt @db.Timestamp(0)
+
+  @@map("meal_tags")
+}
+
+model History {
+  id          Int      @id @default(autoincrement())
+  meal_id     Int
+  meals       Meal     @relation(name: "meal_fk_2", fields: [meal_id], references: [id])
+  created_at  DateTime @default(now()) @db.Timestamp(0)
+  updated_at  DateTime @default(now()) @updatedAt @db.Timestamp(0)
+
+  @@map("histories")
+}

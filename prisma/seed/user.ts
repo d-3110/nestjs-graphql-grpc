@@ -1,8 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { Faker, ja, en } from '@faker-js/faker';
-export const faker = new Faker({
-  locale: [ja, en],
-});
+import { fakerJA } from '@faker-js/faker';
+export const faker = fakerJA;
 const prisma = new PrismaClient();
 
 export const user = async () => {
@@ -10,9 +8,9 @@ export const user = async () => {
     data: Array(5)
       .fill(0)
       .map(() => ({
-        name: faker.internet.userName(),
+        name: faker.person.fullName(),
         email: faker.internet.email(),
-        password: faker.internet.password(),
+        password: faker.string.alphanumeric({ length: 7, casing: 'mixed' }),
       })),
   });
 };

@@ -1,8 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { Faker, ja, en } from '@faker-js/faker';
-export const faker = new Faker({
-  locale: [ja, en],
-});
+import { fakerJA } from '@faker-js/faker';
+export const faker = fakerJA;
 const prisma = new PrismaClient();
 
 export const meal = async () => {
@@ -11,7 +9,7 @@ export const meal = async () => {
       .fill(0)
       .map(() => ({
         name: faker.word.noun(),
-        type: 1,
+        type: Math.floor(Math.random() * 2),
       })),
   });
 };

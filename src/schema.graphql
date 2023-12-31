@@ -7,15 +7,55 @@ type User {
   exampleField: Int!
 }
 
+type Meal {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Tag {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type History {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type MealTag {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 type Query {
   users: [User!]!
   user(id: Int!): User!
+  meals: [Meal!]!
+  meal(id: Int!): Meal!
+  tags: [Tag!]!
+  tag(id: Int!): Tag!
+  histories: [History!]!
+  history(id: Int!): History!
+  mealTags: [MealTag!]!
+  mealTag(id: Int!): MealTag!
 }
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   updateUser(updateUserInput: UpdateUserInput!): User!
   removeUser(id: Int!): User!
+  createMeal(createMealInput: CreateMealInput!): Meal!
+  updateMeal(updateMealInput: UpdateMealInput!): Meal!
+  removeMeal(id: Int!): Meal!
+  createTag(createTagInput: CreateTagInput!): Tag!
+  updateTag(updateTagInput: UpdateTagInput!): Tag!
+  removeTag(id: Int!): Tag!
+  createHistory(createHistoryInput: CreateHistoryInput!): History!
+  updateHistory(updateHistoryInput: UpdateHistoryInput!): History!
+  removeHistory(id: Int!): History!
+  createMealTag(createMealTagInput: CreateMealTagInput!): MealTag!
+  updateMealTag(updateMealTagInput: UpdateMealTagInput!): MealTag!
+  removeMealTag(id: Int!): MealTag!
 }
 
 input CreateUserInput {
@@ -24,6 +64,50 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateMealInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateMealInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateTagInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTagInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateHistoryInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateHistoryInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateMealTagInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateMealTagInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!

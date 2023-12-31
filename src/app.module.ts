@@ -5,6 +5,10 @@ import { PrismaModule } from 'nestjs-prisma';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UsersModule } from './modules/users/users.module';
+import { MealsModule } from './modules/meals/meals.module';
+import { TagsModule } from './modules/tags/tags.module';
+import { HistoriesModule } from './modules/histories/histories.module';
+import { MealTagsModule } from './modules/meal_tags/meal_tags.module';
 
 @Module({
   imports: [
@@ -16,6 +20,10 @@ import { UsersModule } from './modules/users/users.module';
     }),
     PrismaModule.forRoot({ isGlobal: true }),
     UsersModule,
+    MealsModule,
+    TagsModule,
+    HistoriesModule,
+    MealTagsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

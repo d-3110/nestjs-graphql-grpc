@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { UsersController } from './modules/users/users.controller';
+import { UsersService } from './modules/users/users.service';
 import { PrismaModule } from 'nestjs-prisma';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
@@ -25,7 +25,7 @@ import { MealTagsModule } from './modules/meal_tags/meal_tags.module';
     HistoriesModule,
     MealTagsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [UsersController],
+  providers: [UsersService],
 })
 export class AppModule {}

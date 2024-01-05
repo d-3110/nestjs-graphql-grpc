@@ -3,28 +3,64 @@
 # ------------------------------------------------------
 
 type User {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  name: String!
+  email: String!
+  created_at: DateTime!
+  updated_at: DateTime!
 }
 
-type Meal {
-  """Example field (placeholder)"""
-  exampleField: Int!
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type TagCount {
+  meal_tags: Int!
 }
 
 type Tag {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-type History {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  name: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+  meal_tags: [MealTag!]
+  _count: TagCount!
 }
 
 type MealTag {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: ID!
+  meal_id: Int!
+  tag_id: Int!
+  created_at: DateTime!
+  updated_at: DateTime!
+  meals: Meal!
+  tags: Tag!
+}
+
+type History {
+  id: ID!
+  meal_id: Int!
+  created_at: DateTime!
+  updated_at: DateTime!
+  meals: Meal!
+}
+
+type MealCount {
+  meal_tags: Int!
+  histories: Int!
+}
+
+type Meal {
+  id: ID!
+  type: Int!
+  name: String!
+  note: String
+  created_at: DateTime!
+  updated_at: DateTime!
+  meal_tags: [MealTag!]
+  histories: [History!]
+  _count: MealCount!
 }
 
 type Query {

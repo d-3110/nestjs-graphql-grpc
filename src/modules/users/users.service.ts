@@ -9,8 +9,14 @@ import { User } from './entities/user.entity';
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  create(createUserInput: CreateUserInput) {
-    return 'This action adds a new user';
+  create(input: CreateUserInput): PrismaPromise<User> {
+    return this.prisma.user.create({
+      data: {
+        email: input.email,
+        name: input.name,
+        password: input.password,
+      },
+    });
   }
 
   findAll(): PrismaPromise<User[]> {
@@ -18,14 +24,31 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.prisma.user.findUnique({
+      where: {
+        id: id,
+      },
+    });
   }
 
-  update(id: number, updateUserInput: UpdateUserInput) {
-    return `This action updates a #${id} user`;
+  update(id: number, input: UpdateUserInput) {
+    return this.prisma.user.update({
+      where: {
+        id: id,
+      },
+      data: {
+        email: input.email,
+        name: input.name,
+        password: input.password,
+      },
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return this.prisma.user.delete({
+      where: {
+        id: id,
+      },
+    });
   }
 }

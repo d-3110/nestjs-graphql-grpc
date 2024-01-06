@@ -104,7 +104,7 @@ input UpdateUserInput {
   email: String
   name: String
   password: String
-  id: Int!
+  id: ID!
 }
 
 input CreateMealInput {

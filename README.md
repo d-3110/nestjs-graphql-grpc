@@ -1,5 +1,5 @@
 ## Description
-NestjsでREST,graphql,grpcでそれぞれAPIを作ってみたリポジトリ
+NestjsでREST,GraphQL,gRPCでそれぞれAPIを作ってみたリポジトリ
 
 |                |        |                                            | 
 | -------------- | ------ | ------------------------------------------ | 
@@ -7,6 +7,14 @@ NestjsでREST,graphql,grpcでそれぞれAPIを作ってみたリポジトリ
 | フレームワーク | NestJs | ![](https://skillicons.dev/icons?i=nest)   | 
 | DB             | MySQL  | ![](https://skillicons.dev/icons?i=mysql)  | 
 | ORM            | Prisma | ![](https://skillicons.dev/icons?i=prisma) | 
+
+### GraphQL
+![](https://skillicons.dev/icons?i=graphql)
+
+### gRPC
+
+### REST
+
 
 ## Installation
 

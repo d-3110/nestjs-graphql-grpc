@@ -4,6 +4,7 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "plugins": ["@nestjs/graphql"]
+    "plugins": ["@nestjs/graphql"],
+    "assets": [{"include": "**/*.proto", "outDir": "dist/src/"}]
   }
 }

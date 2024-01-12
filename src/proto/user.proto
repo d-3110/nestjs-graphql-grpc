@@ -10,7 +10,7 @@ message FindAllRequest {
 }
 
 message FindAllResponse {
-  repeated User user = 1;
+  repeated User users = 1;
 }
 
 message User {

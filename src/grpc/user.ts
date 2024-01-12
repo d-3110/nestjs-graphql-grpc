@@ -9,7 +9,7 @@ export interface FindAllRequest {
 }
 
 export interface FindAllResponse {
-  user: User[];
+  users: User[];
 }
 
 export interface User {

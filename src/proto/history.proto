@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package history;
+import "google/protobuf/timestamp.proto";
+
+message History {
+  google.protobuf.Timestamp created_at = 5;
+}

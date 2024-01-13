@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package meal;
+import "enums/meal_type.proto";
+import "meal_tag.proto";
+import "history.proto";
+import "google/protobuf/timestamp.proto";
+
+service MealService {
+  rpc FindAll (FindAllRequest) returns (FindAllResponse) {}
+}
+
+message FindAllRequest {
+}
+
+message FindAllResponse {
+  repeated Meal meals = 1;
+}
+
+message Meal {
+  int32 id = 1;
+  enums.meal.MealType type = 2;
+  string name = 3;
+  string note = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  meal_tag.MealTag meal_tags = 7;
+  repeated history.History histories = 8;
+  Count count = 9;
+}
+
+message Count {
+  int32 meal_tags = 1;
+  int32 histories = 2;
+}

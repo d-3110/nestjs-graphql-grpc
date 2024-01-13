@@ -1,17 +1,9 @@
 import { Controller } from '@nestjs/common';
 import { UsersService } from './users.service';
-// import { User } from './entities/user.entity';
-
-import {
-  FindAllResponse,
-  UserServiceController,
-  // UserServiceControllerMethods,
-} from '../../grpc/user';
-// import { Observable, Subject } from 'rxjs';
-// import { User } from './entities/user.entity';
+import { FindAllResponse, UserServiceController } from '../../grpc/user';
 import { GrpcMethod } from '@nestjs/microservices';
 
-@Controller('users_grpc')
+@Controller('users-grpc')
 export class UsersGrpcController implements UserServiceController {
   constructor(private readonly usersService: UsersService) {}
 

@@ -8,5 +8,6 @@ protoc --plugin=$(yarn bin)/protoc-gen-ts_proto \
   --ts_proto_opt=nestJs=true \
   --ts_proto_opt=outputClientImple=false \
   --ts_proto_opt=addGrpcMetadata=true \
+  --ts_proto_opt=useDate=string \
   -Isrc/proto\
   ${proto_dir}/*.proto

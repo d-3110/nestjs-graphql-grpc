@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
-import { UsersGrpcController } from './users_grpc.controller';
+import { UsersGrpcController } from './users-grpc.controller';
 import { UsersService } from './users.service';
 import { UsersResolver } from './users.resolver';
 

@@ -26,5 +26,5 @@ export class MealTag {
   meals?: Meal;
 
   @Field(() => Tag, { nullable: false })
-  tags?: Tag;
+  tag?: Tag;
 }

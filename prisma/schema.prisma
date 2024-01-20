@@ -55,7 +55,7 @@ model MealTag {
   meal_id     Int
   meals       Meal     @relation(name: "meal_fk_1", fields: [meal_id], references: [id])
   tag_id      Int
-  tags        Tag      @relation(name: "tag_fk_1", fields: [tag_id], references: [id])
+  tag        Tag      @relation(name: "tag_fk_1", fields: [tag_id], references: [id])
   created_at  DateTime @default(now()) @db.Timestamp(0)
   updated_at  DateTime @default(now()) @updatedAt @db.Timestamp(0)
 

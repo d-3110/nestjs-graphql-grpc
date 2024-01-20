@@ -24,7 +24,7 @@ export class MealsService {
         },
         meal_tags: {
           include: {
-            tags: {},
+            tag: {},
           },
         },
         histories: {},

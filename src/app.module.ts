@@ -7,6 +7,7 @@ import { MealsModule } from './modules/meals/meals.module';
 import { TagsModule } from './modules/tags/tags.module';
 import { HistoriesModule } from './modules/histories/histories.module';
 import { MealTagsModule } from './modules/meal_tags/meal_tags.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { MealTagsModule } from './modules/meal_tags/meal_tags.module';
       autoSchemaFile: './src/schema.graphql',
     }),
     PrismaModule.forRoot({ isGlobal: true }),
+    CommonModule,
     UsersModule,
     MealsModule,
     TagsModule,

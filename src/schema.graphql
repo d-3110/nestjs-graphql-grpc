@@ -35,7 +35,7 @@ type MealTag {
   created_at: DateTime!
   updated_at: DateTime!
   meals: Meal!
-  tags: Tag!
+  tag: Tag!
 }
 
 type History {

@@ -3,8 +3,9 @@ import { Metadata } from "@grpc/grpc-js";
 import { GrpcMethod, GrpcStreamMethod } from "@nestjs/microservices";
 import { Observable } from "rxjs";
 import { MealType } from "./enums/meal_type";
+import { Timestamp } from "./google/protobuf/timestamp";
 import { History } from "./history";
-import { MealTag } from "./meal_tag";
+import { Tag } from "./tag";
 
 export const protobufPackage = "meal";
 
@@ -20,9 +21,9 @@ export interface Meal {
   type: MealType;
   name: string;
   note: string;
-  createdAt: string | undefined;
-  updatedAt: string | undefined;
-  mealTags: MealTag | undefined;
+  createdAt: Timestamp | undefined;
+  updatedAt: Timestamp | undefined;
+  tags: Tag[];
   histories: History[];
   count: Count | undefined;
 }

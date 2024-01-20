@@ -9,15 +9,15 @@ NestjsでREST,GraphQL,gRPCでそれぞれAPIを作ってみたリポジトリ
 | ORM            | Prisma | ![](https://skillicons.dev/icons?i=prisma) | 
 
 ### GraphQL
-![](https://skillicons.dev/icons?i=graphql)
 
 http://localhost:3000/graphql
 
-
 ### gRPC
+
 http://localhost:5000
 
 ### REST
+
 http://localhost:3000/rest-api
 
 ## DB migrationmigration
@@ -28,7 +28,6 @@ $ yarn prisma migrate dev --name init
 # seed
 $ yarn prisma db seed
 
-# 
 ```
 
 ## Installation
